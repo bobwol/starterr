@@ -16,19 +16,19 @@
       <name>basic article</name>
       <rule>content</rule>
       <description>default article layout</description>
-      <path>layout/basic-article.php</path>
+      <path>layouts/basic-article.php</path>
     </item>
     <item>
       <name>cover</name>
       <rule>cover</rule>
       <description>Edition Cover layout file</description>
-      <path>layout/index.php</path>
+      <path>layouts/index.php</path>
     </item>
     <item>
       <name>toc</name>
       <rule>toc</rule>
       <description>Table of Contents theme file</description>
-      <path>toc.php</path>
+      <path>layouts/toc.php</path>
     </item>
   </layouts>
 </theme>
