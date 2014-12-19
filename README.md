@@ -11,7 +11,7 @@
 1. Download
 2. Unzip
 3. Rename the unzipped folder and start customizing the `config.xml` file 
-4. To edit the **Starterr** source files just open a terminal window at the its root folder, and type:
+4. To edit the **Starterr** source files just open a terminal window at the root folder, and type:
 
 ```bash
 npm i && bower i
@@ -24,7 +24,7 @@ grunt watch
 
 ##Theme file structure:
 
-While developing PressRoom themes you're not bound to a specific directory structure, the only strict requirement is to declare your layout files in `config.xml`. 
+While developing PressRoom themes you're not bound to a specific directory structure, the only strict requirement is to declare your layout files in `config.xml`
 
 Here we decided to place all of our layout files inside a `layout/` folder. We also opted to create a `components/` folder to hold special fragments and a `partial/` folder to hold fragment commonly shared between files. As said, this act just as an example. 
 
