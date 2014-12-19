@@ -22,7 +22,11 @@ Then just start watching:
 grunt watch
 ```
 
-##Basic theme file structure:
+##Theme file structure:
+
+While developing PressRoom themes you're not bound to a specific directory structure, the only strict requirement is to declare your layout files in `config.xml`. 
+
+Here we decided to place all of our layout files inside a `layout/` folder. We also opted to create a `components/` folder to hold special fragments and a `partial/` folder to hold fragment commonly shared between files. As said, this act just as an example. 
 
 ```bash
 ├── Gruntfile.js
@@ -79,6 +83,12 @@ grunt watch
 ├── package.json
 └── version.json
 ```
+
+##Assets versioning
+
+If you are developing your theme to feed a Baker Framework iOS App you would like to hard version your css and js files. To this end we adopted a slightly modified script taken from the Roots Framework. 
+The 
+
 
 ##Credits
 

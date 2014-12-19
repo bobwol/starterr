@@ -1,17 +1,8 @@
 <?php
 
-/*
-*     
-*     theme:        Starterr
-*     rule:         post
-*     name:         basic-article
-*     description:  default layout
-*     
-*/
-
 require('components/coverimage.php');
 
-$stylesheet = 'assets/css/styles.a38a4712.css';
+// $stylesheet = 'assets/css/styles.a38a4712.css'; Override to declare an unique stylesheet
 
 ?>
 <!DOCTYPE html>
@@ -20,8 +11,10 @@ $stylesheet = 'assets/css/styles.a38a4712.css';
 	?>
 	<body class="<?php echo $post->post_name; ?>">
 	<?php
+
 		require('partials/content.php');
+		require('partials/footer.php');
+		
 	?>
-	<script type="text/javascript" src="assets/js/scripts.min.665cf2e5.js"></script>
 	</body>
 </html>

@@ -100,24 +100,19 @@ module.exports = function(grunt) {
                 }
             }
         },
-        ver: {
-          myapp: {
-            phases: [
-              {
-                files: [
-                  'assets/css/*.css',
-                  'assets/css/*.*.css',
-                  'assets/js/*.min.js',
-                  'assets/js/*.*.min.js'
-                ],
-                references: [
-                  'layouts/basic-article.php',
-                  'layouts/toc.php'
-                ]
-              }
-            ],
-            versionFile: 'version.json'
-          }
+        version: {
+            assets: {
+                options: {
+                    length: 16,
+                    format: false, 
+                    rename: true,
+                    manifest: 'assets/manifest.json',
+                    summaryOnly: true,
+                },
+                files: {
+                    'inc/scripts.php': 'assets/{css,js}/{styles,scripts}.min.{css,js}'
+                }
+            }
         },
         watch: {
           js: {

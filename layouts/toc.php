@@ -1,13 +1,5 @@
 <?php
 
-/*
-*     
-*     theme:        Starterr
-*     rule:         toc
-*     description:  Table of Contents theme file
-*     
-*/
-
 $stylesheet = 'assets/css/toc.7a77eb84.css';
 
 ?>

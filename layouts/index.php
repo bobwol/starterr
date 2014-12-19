@@ -1,15 +1,7 @@
 <?php
 
-/*
-*
-*     theme:        Starterr
-*     rule:         cover
-*     name:         cover
-*     description:  Edition Cover layout file
-*
-*/
-
 $posts = pr_get_edition_posts( $edition, true );
+
 ?>
 <!DOCTYPE html>
     <head>
