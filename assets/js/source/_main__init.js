@@ -46,6 +46,8 @@ mql.addListener(function(m) {
 			textFit(checkTitle, {minFontSize:10, maxFontSize: 150, reProcess: true});
 		}		
 	} else {
-		$('.textFitted').removeAttr("style");
+		if (typeof(checkTitle) != 'undefined' && checkTitle != null) {
+			checkTitle.removeAttribute("style");
+		}
 	}
 });

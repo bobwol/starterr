@@ -1,178 +1,185 @@
 'use strict';
 module.exports = function(grunt) {
+
+    require('load-grunt-tasks')(grunt);
+    // Show elapsed time
+    require('time-grunt')(grunt);
+
+    var jsContent = [
+        'assets/bower_components/modernizer/modernizr.js',
+        'assets/bower_components/textFit/textFit.min.js',
+        'assets/bower_components/fluidvids/src/fluidvids.js',
+        'assets/bower_components/fastclick/lib/fastclick.js',
+        'assets/js/source/_main__init.js'
+    ];
+
+    var jsToc = [
+        'assets/bower_components/modernizer/modernizr.js',
+        'assets/bower_components/textFit/textFit.min.js',
+        'assets/bower_components/swiper/src/idangerous.swiper.js',
+        'assets/bower_components/fastclick/lib/fastclick.js',
+        'assets/js/source/_toc__init.js'
+    ];
+
     grunt.initConfig({
         jshint: {
-          options: {
-            jshintrc: '.jshintrc'
-          },
-          all: [
-            'Gruntfile.js',
-            'assets/js/source/*.js',
-            '!assets/js/scripts.min.js'
-          ]
+            options: {
+                jshintrc: '.jshintrc'
+            },
+            all: [
+                'Gruntfile.js',
+                'assets/js/source/*.js',
+                '!assets/js/scripts.min.js'
+            ]
         },
+
         sass: {
-            dev: {
-                files: {
-                    'assets/css/styles.css': 'assets/sass/styles.scss',
-                    'assets/css/toc.css': 'assets/sass/toc.scss'
+                dev: {
+                        files: {
+                                'assets/css/styles.css': 'assets/sass/styles.scss',
+                                'assets/css/toc.css': 'assets/sass/toc.scss'
+                        },
+                        options: {
+                                compass: false,
+                                debugInfo: true,
+                                lineNumbers: true,
+                                sourcemap: 'auto',
+                                precision: 7,
+                                loadPath: 'assets/bower_components/',
+                                style: 'expanded'
+                        }
                 },
+                dist: {
+                        files: {
+                                'assets/css/styles.min.css': 'assets/sass/styles.scss',
+                                'assets/css/toc.min.css': 'assets/sass/toc.scss'
+                        },
+                        options: {
+                                debugInfo: false,
+                                lineNumbers: false,
+                                sourcemap: 'none',
+                                precision: 7,
+                                loadPath: 'assets/bower_components/',
+                                style: 'compressed'
+                        }
+                }
+        },
+
+        cssmin: {
+            options: {
+                keepSpecialComments:0
+            },
+            combine: {
+                files: {
+                    'assets/css/styles.min.css': [
+                        ''
+                    ]
+                }
+            }
+        },
+
+        uglify: {
+            dev: {
                 options: {
-                    compass: false,
-                    debugInfo: true,
-                    lineNumbers: true,
-                    sourcemap: 'auto',
-                    precision: 7,
-                    loadPath: 'assets/bower_components/',
-                    style: 'expanded'
+                  compress: false,
+                  mangle: false,
+                  beautify: true,
+                  preserveComments: 'all'
+                },
+                files: {
+                    'assets/js/scripts.js': [jsContent],
+                    'assets/js/toc.js': [jsToc]
                 }
             },
             dist: {
                 files: {
-                    'assets/css/styles.css': 'assets/sass/styles.scss',
-                    'assets/css/toc.css': 'assets/sass/toc.scss'
-                },
-                options: {
-                    debugInfo: false,
-                    lineNumbers: false,
-                    sourcemap: 'none',
-                    precision: 7,
-                    loadPath: 'assets/bower_components/',
-                    style: 'compressed'
+                    'assets/js/scripts.min.js': [jsContent],
+                    'assets/js/toc.min.js': [jsToc]
                 }
             }
         },
-        cssmin: {
-          options: {
-            keepSpecialComments:0
-          },
-          combine: {
-            files: {
-              'assets/css/styles.min.css': [
-                ''
-              ]
-            }
-          }
-        },
-        uglify: {
-            options: {
-            compress: false
-          },
-          dist: {
-            files: {
-              'assets/js/scripts.min.js': [
-              'assets/bower_components/modernizer/modernizr.js',
-              'assets/bower_components/textFit/textFit.min.js',
-              'assets/bower_components/fluidvids/src/fluidvids.js',
-              'assets/bower_components/fastclick/lib/fastclick.js',
-              'assets/js/source/_main__init.js'
-              ],
-              'assets/js/toc.min.js': [
-              'assets/bower_components/modernizer/modernizr.js',
-              'assets/bower_components/textFit/textFit.min.js',
-              'assets/bower_components/swiper/src/idangerous.swiper.js',
-              'assets/bower_components/fastclick/lib/fastclick.js',
-              'assets/js/source/_toc__init.js'
-              ]
-            }
-          }
-        },
+
         rsync: {
-            options: {
-                args: ["--verbose --no-p --no-g --chmod=ugo=rwX"],
-                exclude: ['node_modules', '.bowerrc', '.editorconfig', '.gitignore', '.jshintrc','assets/sass', 'assets/bk*', 'assets/js/source', 'assets/bower_components', '*.map', '.*', '.sass-cache/', 'Gemfile', 'version.json', 'Gemfile.lock', 'Gruntfile.js', '*.md', 'screenshot.png', 'lang', 'package.json', 'bower.json'],
-                recursive: true
-            },
-            stage: {
                 options: {
-                    src: "../starterr/",
-                    dest: "",
-                    host: "",
-                    syncDestIgnoreExcl: false
+                        args: ["--verbose --no-p --no-g --chmod=ugo=rwX"],
+                        exclude: ['node_modules', '.bowerrc', '.editorconfig', '.gitignore', '.jshintrc','assets/sass', 'assets/bk*', 'assets/js/source', 'assets/bower_components', '*.map', '.*', '.sass-cache/', 'Gemfile', 'version.json', 'Gemfile.lock', 'Gruntfile.js', '*.md', 'screenshot.png', 'lang', 'package.json', 'bower.json'],
+                        recursive: true
+                },
+                stage: {
+                        options: {
+                                src: "../starterr/",
+                                dest: "",
+                                host: "",
+                                syncDestIgnoreExcl: false
+                        }
+                },
+                prod: {
+                        options: {
+                                src: "../starterr/",
+                                dest: "",
+                                host: "",
+                                syncDestIgnoreExcl: false
+                        }
                 }
-            },
-            prod: {
-                options: {
-                    src: "../starterr/",
-                    dest: "",
-                    host: "",
-                    syncDestIgnoreExcl: false
-                }
-            }
         },
+
         version: {
             assets: {
                 options: {
                     length: 16,
                     format: false, 
                     rename: true,
-                    manifest: 'assets/manifest.json',
+                    manifest: 'assets/pr-manifest.json',
                     summaryOnly: true,
                 },
                 files: {
-                    'inc/scripts.php': 'assets/{css,js}/{styles,scripts}.min.{css,js}'
+                    'inc/pr_scripts.php': 'assets/{css,js}/{styles,toc,scripts}.min.{css,js}'
                 }
             }
         },
+
         watch: {
-          js: {
-            files: [
-              '<%= jshint.all %>',
-              'js/_toc__init.js',
-              'js/_main__init.js'
-            ],
-            tasks: ['jshint', 'uglify']
-          },
-          sass: {
-            files: [
-              'assets/sass/*.sass',
-              'assets/sass/*.scss',
-              'assets/sass/base/*.scss',
-              'assets/sass/components/*.scss',
-              'assets/sass/layout/*.scss',
-              'assets/sass/utility/*.scss',
-              'assets/sass/pages/*.scss'
-            ],
-            tasks: ['clean','uglify', 'sass:dev']
-          },
-          livereload: {
-            // Browser live reloading
-            // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
-            options: {
-              livereload: false
+
+            js: {
+                files: [
+                    '<%= jshint.all %>',
+                    'js/_toc__init.js',
+                    'js/_main__init.js'
+                ],
+                tasks: ['jshint', 'uglify']
             },
-            files: [
-              'assets/css/styles.css',
-              'assets/js/scripts.min.js',
-              '**/*.php'
-            ]
-          }
+
+            sass: {
+                files: [
+                    'assets/sass/*.sass',
+                    'assets/sass/*.scss',
+                    'assets/sass/base/*.scss',
+                    'assets/sass/components/*.scss',
+                    'assets/sass/layout/*.scss',
+                    'assets/sass/utility/*.scss',
+                    'assets/sass/pages/*.scss'
+                ],
+                tasks: ['clean','uglify:dev', 'sass:dev']
+            }
+            
         },
+
         clean: {
-          dist: [
-            'assets/css/*.css',
-            'assets/css/*.map',
-            'assets/js/scripts.*.js'
-          ]
+            dist: [
+                'assets/css/*.css',
+                'assets/css/*.map',
+                'assets/js/scripts.*.js',
+                'assets/js/toc.*.js'
+            ]
         }
+
     });
 
-    // Load tasks
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks("grunt-rsync");
-    grunt.loadNpmTasks('grunt-ver');
-
-    // Register tasks
     grunt.registerTask('default', [
     'clean',
     'sass:dist',
-    'uglify',
-    'ver:myapp',
+    'uglify:dist',
+    'version',
     ]);
 
     grunt.registerTask('dev', [

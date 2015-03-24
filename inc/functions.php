@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('PR_ENV')) {
+  define('PR_ENV', 'production');  // 'production' or 'development'
+}
+
 /**
     Remove Empty <p>
  */

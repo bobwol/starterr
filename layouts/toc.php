@@ -1,6 +1,17 @@
 <?php
 
-$stylesheet = 'assets/css/toc.7a77eb84.css';
+/*
+*
+*     theme:        Starterr
+*     rule:         toc
+*     description:  Table of Contents theme file
+*
+*/
+
+include(get_template_directory() .'/inc/pr_scripts.php');
+
+$stylesheet = $assets['toc-css'];
+$javascript = $assets['toc-js'];
 
 ?>
 <!DOCTYPE html>
@@ -13,13 +24,16 @@ $stylesheet = 'assets/css/toc.7a77eb84.css';
         <link rel="stylesheet" href="<?php echo $stylesheet; ?>">
     </head>
     <body id="toc" class="<?php echo $post->post_name; ?>">
-        <div class="swiper-container" style="height:<?php echo pr_get_eproject_option( $editorial_project_id, '_pr_index_height' ).'px; width: 100%;'; ?>">
+        <div class="swiper-container" style="width: 100%;'; ?>">
             <div class="swiper-wrapper">
                 <?php
                 if ( $posts->have_posts() ):
                     while ( $posts->have_posts() ):
-                        $tocItemBg = false;
-                        $posts->the_post();
+
+                      $tocItemBg = false;
+                      $posts->the_post();
+                      $post_type = get_post_type( get_the_ID() );
+                      if( $post_type != "pr_ad_bundle") :
                         $image_id =  get_post_thumbnail_id();
                         $coverClass = '.cover__overlay--simple check';
                         if($image_id):
@@ -41,10 +55,10 @@ $stylesheet = 'assets/css/toc.7a77eb84.css';
                         </a>
                     </header>
                 </article>
-                
-                <?php endwhile; endif; ?>
+
+              <?php endif; endwhile; wp_reset_postdata(); endif; ?>
             </div>
         </div>
-        <script type="text/javascript" src="assets/js/toc.min.5b460967.js"></script>
+        <script type="text/javascript" src="<?php echo $javascript; ?>"></script>
     </body>
 </html>

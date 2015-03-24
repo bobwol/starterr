@@ -10,4 +10,5 @@ if($image_id):
 else:
 	$titleClass = 'article__title';
 	$metaClass = 'aligned';
+    $image = false;
 endif;

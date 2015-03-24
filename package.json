@@ -30,7 +30,9 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-rsync": "latest",
-    "grunt-wp-assets": "latest"
+    "grunt-wp-assets": "latest",
+    "load-grunt-tasks": "latest",
+    "time-grunt": "latest"
   },
   "dependencies": {}
 }
