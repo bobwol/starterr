@@ -52,7 +52,7 @@
 			<div class="wrapper">
 			<?php 
 
-				the_content(); //echo '<a href="'.pr_next().'">link</a>'; 
+				the_content();
 
 			?>
 			</div>
