@@ -14,25 +14,29 @@
 }
 
 .swiper-container {
-	width: 100%;
-	overflow-x: scroll;
+	// width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 .toc__item {
 	background-color: #ddd; 
 	position: relative;
-	width: 33.33333333333333333333%;
-	header {
-		position: absolute;
-		z-index: 100;
-		word-wrap: break-word;
-		width: 100%;
-		height: inherit;
-		padding: 1rem 2rem;
-		a {
-			text-decoration: none;
-		}
+	// font-size: 16px;
+	.entry-meta {
+		text-align: center;
+		color: white;
 	}
+}
+
+.toc-item__header {
+	@include scut-center-transform;
+	width: 100%;
+    text-align: center;
+    padding: 0 1em;
+    .byline {
+    	margin-bottom: 0;
+    }
 }
 
 #toc .swiper-slide-active {
@@ -53,6 +57,13 @@
 
 .toc__title {
 	margin: 0;
-	@include remType(28px, 40px);
-	@extend %line-clamp;
+	
+	@include mq($until: mobile) {
+		  display: -webkit-box;
+		  -webkit-line-clamp: 2;
+		  -webkit-box-orient: vertical;
+		  overflow: hidden;
+		  text-overflow: ellipsis;  
+	}
+
 }

@@ -1,18 +1,23 @@
 {
-  "name": "pressroom default theme",
+  "name": "pressroom starterr theme",
   "dependencies": {
-    "textFit": "~2.1.0",
     "modernizer": "~2.8.2",
-    "knife": "~0.3.2",
     "Sassifaction": "~0.0.2",
-    "sass-mq": "~2.1.1",
-    "scut": "~1.0.1",
+    "sass-mq": "~3.2.2",
+    "scut": "~1.2.0",
     "jeet": "~6.1.2",
     "geoffgraham.animate.scss": "*",
-    "mobile-detect": "~0.4.0",
+    "mobile-detect": "~1.2.0",
     "fluidvids": "latest",
     "fastclick": "~1.0.3",
-    "swiper": "~2.7.0",
-    "bourbon": "~4.0.2"
+    "bourbon": "~4.2.3",
+    "typesettings": "~2.4.0",
+    "modular-scale": "~2.1.1",
+    "normalize.scss": "~3.0.2+normalize.3.0.2"
+  },
+  "resolutions": {
+    "sass-mq": "~3.2.2",
+    "scut": "~1.2.0",
+    "textFit": "~2.2.2"
   }
 }

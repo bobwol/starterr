@@ -20,7 +20,7 @@
 
 //  borders:
 
-    $bd: 1px solid $light-grey;
+    $bd: 1px solid lighten($grey, 10);
     $bd-black: 1px solid $dark-grey;
 
 //  placeholders 

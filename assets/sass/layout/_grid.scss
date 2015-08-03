@@ -3,65 +3,101 @@
    ========================================================================== */
 
 %wrap {
-	@include center(mq-get-breakpoint-width(basic), 1rem);
-	@include mq($from: mobile) {
-		@include center(mq-get-breakpoint-width(mobile), 1rem);
-	}
-	@include mq($from: fablet) {
-		@include center(mq-get-breakpoint-width(fablet), 1rem);
-	}
-	@include mq($from: tablet) {
-		@include center(mq-get-breakpoint-width(tablet), 2rem);
-	}
+	@include center(100%, 1rem);
+
+    @include mq($from: phablet) {
+        @include center(mq-get-breakpoint-width(tablet), 2rem);
+    }
+    @include mq($from: desktop) {
+        @include center(1140px, 1.5rem);
+        // @include center(mq-get-breakpoint-width(wide), 2rem);
+    }
 }
 
 %wide-wrap {
-	@include center(mq-get-breakpoint-width(mobile), 1rem);
-	@include mq($from: mobile) {
-		@include center(mq-get-breakpoint-width(fablet), 1rem);
-	}
-	@include mq($from: fablet) {
-		@include center(mq-get-breakpoint-width(tablet), 1rem);
-	}
-	@include mq($from: tablet) {
-		@include center(mq-get-breakpoint-width(desktop), 2rem);
-	}
-}
+    @include center(100%, 1rem);
 
-.main {
-	padding-bottom: 2rem;
-}
-
-.article__title,
-blockquote,
-.aligned 
-{
-	@extend %wide-wrap;
-}
-
-.main h2,
-.main h3,
-.main h4,
-.main h5,
-.main h6,
-.main > p,
-ul,
-ol,
-dl,
-.aligncenter,
-.alignleft,
-.alignright,
-small,
-aside {
-	@extend %wrap;
+    // @include mq($from: phablet) {
+    //     @include center(100%, 2rem);
+    // }
+    @include mq($from: wide) {
+        @include center(1140px, 1rem);
+        // @include center(mq-get-breakpoint-width(wide), 2rem);
+    }
 }
 
 .wrapper {
 	@extend %wrap;
 }
 
-.main figure .aligncenter,
-.main figure .alignleft,
-.main figure .alignright {
-	width: 100%;
+.wrapper--header {
+    @extend %wide-wrap;
+}
+
+
+.entry-content {
+	padding-bottom: 2rem;
+}
+
+blockquote,
+.aligned,
+.entry-content p.column,
+.entry-content-asset {
+	@include mq($from: desktop) {
+        width: 100%;
+        // width: column-width(12/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content p,
+ul,
+ol,
+dl,
+small,
+aside,
+pre,
+.content-info__container {
+    @include mq($from: tablet) {
+        // width: 61.8%;
+        width: 91%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+	@include mq($from: desktop) {
+        // width: 61.8%;
+        width: column-width(8/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+ul > ol,
+ol > ul {
+    width: auto;
+}
+
+p > small {
+   width: auto; 
+}
+
+.alignnone {
+	margin-left: -1rem;
+	margin-right: -1rem;
+
+    @include mq($from: tablet) {
+        margin-left: -2rem;
+		margin-right: -2rem;
+    }
+    @include mq($from: desktop) {
+        margin-left: 0;
+		margin-right: 0;
+    }
 }

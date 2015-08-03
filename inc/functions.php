@@ -1,8 +1,10 @@
 <?php
 
-if (!defined('PR_ENV')) {
-  define('PR_ENV', 'production');  // 'production' or 'development'
-}
+/* ==========================================================================
+   LOCAL INCLUDE
+   ========================================================================== */
+
+include(locate_template('inc/pr_scripts.php'));
 
 /**
     Remove Empty <p>
@@ -58,7 +60,7 @@ function clean_caption($output, $attr, $content) {
     Another way of filtering image output
  */
 
-add_filter('the_content', 'another_filter_images', 40, 1);
+// add_filter('the_content', 'another_filter_images', 40, 1);
 
 function another_filter_images($content){
 
@@ -70,12 +72,24 @@ function another_filter_images($content){
     return $content;
 }
 
+function filter_p_on_images($content){
+  return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+add_filter('the_content', 'filter_p_on_images');
+
 /**
-    Remove <p> from iframes
+    Wrap oembed 
  */
 
-add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
+// add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
 
-function my_embed_oembed_html($html, $url, $attr, $post_id) {
-  return '<div class="entry-content-asset">' . $html . '</div>';
+// function my_embed_oembed_html($html, $url, $attr, $post_id) {
+//     return '<div class="entry-content-asset">' . $html . '</div>';
+// }
+
+add_filter('oembed_dataparse','oembed_youtube_add_wrapper',10,3);
+
+function oembed_youtube_add_wrapper($return, $data, $url) {
+    return "<div class='entry-content-asset entry-content-asset--{$data->provider_name}'>{$return}</div>";
 }

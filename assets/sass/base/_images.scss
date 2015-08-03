@@ -2,13 +2,23 @@
    Image styles
    ========================================================================== */
 
+img {
+	width: auto;
+	height: auto;
+	display: block;
+}
+
 figure {
-	margin: 0;
 	padding: 0;
 	line-height: 0;
+	margin: 0;
 	img {
 		width: 100%;
 		height: auto
+	}
+	&.alignleft,
+	&.alignright {
+		margin-bottom: emRhythm(4);
 	}
 }
 
@@ -17,43 +27,101 @@ figure .aligncenter {
 }
 
 img.aligncenter {
-	// max-width: 100%;
 	height: auto;
+}
+
+.alignnone,
+.aligncenter {
+	display: block;
 }
 
 
 figure + p {
-	@include ktype(0,1,1);
 	display: block;
 }
 
 .entry-content-asset + p
  {
-	@include ktype(0,0,1);
+
 	display: block;
 }
 
 .entry-content-asset + p:empty,
 figure + p:empty {
-	@include ktype(0,1,0);
-}
-
-.alignnone {
 
 }
 
-.alignleft {
-
+img {
+	&.alignnone,
+	&.aligncenter,
+	&.alignright,
+	&.alignleft {
+		width: 100%;
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
+	}
 }
 
-.alignright {
-
+.alignnone,
+img.alignnone {
+	@include mq($from: desktop) {
+        // width: 61.8%;
+        width: column-width(12/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-.aligncenter {
-
+.aligncenter,
+img.aligncenter {
+	@include mq($from: desktop) {
+        width: 61.8%;
+        // width: column-width(8/12);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-figcaption {
+.alignright,
+img.alignright {
+	
+	@include mq($from: phablet) {
+		float: right;
+		margin-left: emRhythm(8);
+		margin-right: 0;
+		width: 38.2%;
+	}
+	
+	&.wrap{
+		@include mq($from: desktop) {
+			width: column-width(4/12);
+			padding-right: column-gutter(2);
+			margin-right: column-width(2/12);
+		}
+	}
+}
+
+.alignleft,
+img.alignleft {
+	@include mq($from: phablet) {
+		float: left;
+		margin-right: emRhythm(8);
+		width: 38.2%;
+	}
+	@include mq($from: desktop) {
+		width: column-width(5/12);
+	}
+	
+	&.wrap{
+		@include mq($from: desktop) {
+			width: column-width(4/12);
+			padding-left: column-gutter(2);
+			margin-left: column-width(2/12);
+		}
+	}
+}
+
+.alignnone figcaption {
 	margin-left: 1em;
 }

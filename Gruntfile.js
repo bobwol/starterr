@@ -7,7 +7,6 @@ module.exports = function(grunt) {
 
     var jsContent = [
         'assets/bower_components/modernizer/modernizr.js',
-        'assets/bower_components/textFit/textFit.min.js',
         'assets/bower_components/fluidvids/src/fluidvids.js',
         'assets/bower_components/fastclick/lib/fastclick.js',
         'assets/js/source/_main__init.js'
@@ -15,7 +14,6 @@ module.exports = function(grunt) {
 
     var jsToc = [
         'assets/bower_components/modernizer/modernizr.js',
-        'assets/bower_components/textFit/textFit.min.js',
         'assets/bower_components/swiper/src/idangerous.swiper.js',
         'assets/bower_components/fastclick/lib/fastclick.js',
         'assets/js/source/_toc__init.js'

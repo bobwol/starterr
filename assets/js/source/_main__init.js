@@ -1,26 +1,26 @@
-var checkTitle = document.getElementsByClassName('cover__title--resize')[0];
-
 fluidvids.init({
 	selector: ['iframe', 'object'], 
 	players: ['www.youtube.com', 'player.vimeo.com']
 });
-
-var mql = window.matchMedia("(min-width: 500px)");
 
 var ua = window.navigator.userAgent;
 
 var str = "BakerFramework";
 var n = ua.search(str);
 
+/**
+ * If we're not in Baker we'll load fonts from Google
+ * To change the collection go to:
+ * 
+ * https://www.google.com/fonts#UsePlace:use/Collection:Lato|Playfair+Display:400,700,400italic|Cardo:400,700,400italic
+ * 
+ * Remember to edit families defined in fontfaceobserver.php accordingly
+ */
+
 if (n < 0) {
 	WebFontConfig = {
-	google: { families: [ 'Lato:400,700,400italic,700italic:latin', 'Playfair+Display:400,700,400italic,700italic:latin' ] },
+	google: { families: [ 'Lato::latin', 'Playfair+Display:400,700,400italic:latin' ] },
 	active: function() {
-		if(mql.matches) {
-			if (typeof(checkTitle) != 'undefined' && checkTitle != null) {
-				textFit(checkTitle, {minFontSize:10, maxFontSize: 150, reProcess: true});
-			}
-		}
 	}
 	};
 	(function() {
@@ -33,21 +33,5 @@ if (n < 0) {
 		s.parentNode.insertBefore(wf, s);
 	})();
 } else {
-	if(mql.matches) {
-		if (typeof(checkTitle) != 'undefined' && checkTitle != null) {
-			textFit(checkTitle, {minFontSize:10, maxFontSize: 150, reProcess: true});
-		}
-	}
+	document.documentElement.className += " fonts-loaded";
 }
-
-mql.addListener(function(m) {
-	if(m.matches){
-		if (typeof(checkTitle) != 'undefined' && checkTitle != null) {
-			textFit(checkTitle, {minFontSize:10, maxFontSize: 150, reProcess: true});
-		}		
-	} else {
-		if (typeof(checkTitle) != 'undefined' && checkTitle != null) {
-			checkTitle.removeAttribute("style");
-		}
-	}
-});

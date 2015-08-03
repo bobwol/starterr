@@ -1,32 +1,61 @@
-<div class="container"> 
-	<!-- <div class="wrapper"> -->
-		<article id="skrollr-body">
-			<?php if($image): ?>
-			<header class="cover">
-				<div class="cover__image" style="background-image: url('<?php echo $image[0]; ?>');">
-					<div class="cover__overlay"></div>
-					<div class="cover__wrapper">
-			<?php else: ?>
-				<header >
-			<?php endif; ?>
-					<h1 class="<?php echo $titleClass; ?>">
-					<?php the_title(); ?>
+<?php 
+	include(locate_template('layouts/components/coverimage.php'));
+?>
+<div class="container" role="main"> 
+	<article class="hentry">
+		<?php if($image): ?>
+		<header class="hentry-header hentry-header--cover">
+			<div class="cover__image" style="background-image: url('<?php echo $image[0]; ?>');">
+				<div class="cover__overlay"></div>
+				<div class="cover__content">
+					<div class="wrapper--header">
+		<?php else: ?>
+			<header class="hentry-header hentry-header--naked">
+				<div class="wrapper--header">
+		<?php endif; ?>
+		<?php 
+
+			$title  = get_the_title(); 
+			$title_words = strlen($title);
+			if ( $title_words <= 24 ):
+				$titleClass .= ' entry-title--emphasis';
+			endif;
+
+		?>
+					<h1 class="entry-title<?php echo (empty($titleClass)) ? '' :  ' '.$titleClass; ?>">
+					<?php 
+
+						// the_title();
+						echo $title;
+
+					?>
 					</h1>
-					<div class="entry-meta <?php echo $metaClass; ?>">
-						<p>
-						<?php the_author(); ?>
+					<div class="entry-meta">
+						<p class="byline author vcard">
+						<?php _e( 'by', 'pr_straterr' ); ?>
+						<?php 
+
+							the_author(); 
+
+						?>
 						</p>
 					</div>
-			<?php if($image): ?>
+		<?php if($image): ?>
 					</div>
 				</div>
-			</header>
-			<?php else: ?>
-				</header>
-			<?php endif; ?>
-			<div class="main">
-				<?php the_content(); ?>
 			</div>
-		</article>
-	<!-- </div> -->
+		<?php else: ?>
+			</div>
+		<?php endif; ?>
+		</header>
+		<div class="entry-content">
+			<div class="wrapper">
+			<?php 
+
+				the_content(); //echo '<a href="'.pr_next().'">link</a>'; 
+
+			?>
+			</div>
+		</div>
+	</article>
 </div>

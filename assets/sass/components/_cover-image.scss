@@ -2,7 +2,7 @@
    ENTRY META
    ========================================================================== */
 
-.cover + .main {
+.cover + .entry-content {
 	margin-top: 2rem;
 }
 
@@ -21,43 +21,21 @@
 	overflow: hidden;
 }
 
-h1.cover__title--resize {
-	line-height: 1.5em;
-	width: mq-get-breakpoint-width(basic);
-	padding: 0 2rem;
-	@include mq($from: mobile) {
-		width: mq-get-breakpoint-width(mobile);
-	}
-	@include mq($from: fablet) {
-		width: mq-get-breakpoint-width(fablet);
-	}
-	@include mq($from: tablet) {
-		width: mq-get-breakpoint-width(tablet);
-	}
-	@include mq($from: desktop) {
-		width: mq-get-breakpoint-width(desktop);
-	}
-	@include mq($from: wide) {
-		width: mq-get-breakpoint-width(wide);
-	}
+h1.entry-title--resize {
+	// line-height: 1.5em;
+	// padding: 0 2rem;
 }
 
-.cover__wrapper {
+.cover__content {
 	@include scut-center-transform;
+	width: 100%;
 }
 
 .toc__title,
-.cover__title {
-	transition: all 1s ease-in-out;
-	color: white; // fixed color. All the lines below are meant to be removed.
-	&.background--light {
-	}
-	&.background--dark {
-		color: white;
-	}
-	&.background--complex {
-		color: white;
-	}
+.entry-title--cover {
+	// transition: all 1s ease-in-out;
+	margin-top: 0;
+	color: white;
 }
 
 %light-svgLine {

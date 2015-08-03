@@ -2,10 +2,10 @@
    VENDOR
    ========================================================================== */
 
-@import "bourbon/dist/bourbon";
+@import "bourbon/app/assets/stylesheets/bourbon";
 @import "scut/dist/scut";
 @import "jeet/scss/jeet/index";
-@import "knife/knife.scss";
+@import "modular-scale/stylesheets/_modular-scale";
 
 /* ==========================================================================
    BASE
@@ -14,11 +14,12 @@
 @import "base/globals";
 @import "base/breakpoints";
 @import "base/colors";
-@import "base/images";
-@import "base/embed";
 
 @import "base/fonts";
 @import "base/typography";
+
+@import "base/images";
+@import "base/embed";
 
 /* ==========================================================================
    UTILITY

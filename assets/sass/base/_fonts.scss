@@ -1,32 +1,53 @@
 /* ==========================================================================
-   Font Families
-   ========================================================================== */
+    Font Families
+    ========================================================================== */
 
-$font-sans: "Lato", "Lato-Regular", "Helvetica Neue", Helvetica, sans-serif;
-$font-sans-bold: "Lato", "Lato-Bold", "Helvetica Neue", Helvetica, sans-serif;
-$font-serif: "Playfair Display", "PlayfairDisplay-Regular", "Times New Roman", serif;
-$font-serif-bold: "Playfair Display", "PlayfairDisplay-Bold", "Times New Roman", serif;
+$font-sans: "Helvetica Neue", Helvetica, sans-serif;
+$font-serif: Georgia, Times, "Times New Roman", serif;
+$font-serif-alt: Georgia, Times, 'Times New Roman', serif;
 
-%alt {
-  font-family: $font-sans;
+body { 
+    font-family: $font-serif-alt;
 }
 
-%alt-bold {
-  font-family: $font-sans-bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-serif;
+    font-style:   normal;
 }
 
-em {
-  font-style:   italic;
+aside,
+figcaption,
+.caption {
+        font-family: $font-sans;    
 }
 
-strong {
-  font-weight:  700;
-}
-
-em strong,
-strong em {
-  font-style:   normal;
-  font-weight:  700;
+.fonts-loaded {
+    // body { 
+    //     font-family: "Cardo";
+    // }  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .toc__title,
+    #logo p,
+    .edition-meta {
+        font-family: "Playfair Display", "PlayfairDisplay-Bold", ;
+        font-style:   normal;
+    }
+    aside,
+    small,
+    figcaption,
+    .caption {
+        font-family: "Lato", "Lato-Regular";    
+    }  
 }
 
 /*

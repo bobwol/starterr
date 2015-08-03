@@ -2,34 +2,20 @@
    ENTRY META
    ========================================================================== */
 
-.entry-meta	{
+.entry-meta,
+.edition-meta	{
 	text-align: center;
-	width: 93%;
-	margin: 0 auto;
 	p {
 		margin: 0;
-		padding-top: 0.3em;
-		padding-bottom: 0.5em;
-		border-top: 4px double rgba(0,0,0,.3);
-		border-bottom: 4px double rgba(0,0,0,.3);
-		&:before {
-			font-style: italic;
-			content: 'di ';
-			font-family: $font-serif;
-		}
 	}
 	&.background--dark {
 		p {
 			color: white;
-			border-top: 4px double rgba(255,255,255,.3);
-			border-bottom: 4px double rgba(255,255,255,.3);
 		}
 	}
 	&.background--light {
 		p {
 			color: #222;
-			border-top: 4px double rgba(0,0,0,.3);
-			border-bottom: 4px double rgba(0,0,0,.3);
 		}
 	}
 	&.aligned {
@@ -37,10 +23,8 @@
 	}
 }
 
-.cover__wrapper .entry-meta {
+.cover__content .entry-meta {
 	p {
 		color: white;
-		border-top: 4px double rgba(255,255,255,.3);
-		border-bottom: 4px double rgba(255,255,255,.3);
 	}
 }

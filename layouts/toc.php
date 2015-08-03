@@ -1,37 +1,22 @@
-<?php
-
-/*
-*
-*     theme:        Starterr
-*     rule:         toc
-*     description:  Table of Contents theme file
-*
-*/
-
-include(get_template_directory() .'/inc/pr_scripts.php');
-
-$stylesheet = $assets['toc-css'];
-$javascript = $assets['toc-js'];
-
-?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><?php the_title(); ?></title>
+        <title>Table of content</title>
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-        <link rel="stylesheet" href="<?php echo $stylesheet; ?>">
+        <link rel="stylesheet" href="<?php echo $GLOBALS['toc-css']; ?>">
     </head>
-    <body id="toc" class="<?php echo $post->post_name; ?>">
+    <body id="toc" class="">
         <div class="swiper-container" style="width: 100%;'; ?>">
             <div class="swiper-wrapper">
                 <?php
-                if ( $posts->have_posts() ):
-                    while ( $posts->have_posts() ):
+
+                if ( $edition_posts->have_posts() ):
+                    while ( $edition_posts->have_posts() ):
 
                       $tocItemBg = false;
-                      $posts->the_post();
+                      $edition_posts->the_post();
                       $post_type = get_post_type( get_the_ID() );
                       if( $post_type != "pr_ad_bundle") :
                         $image_id =  get_post_thumbnail_id();
@@ -49,9 +34,18 @@ $javascript = $assets['toc-js'];
                 ?>
                 <article class="toc__item swiper-slide cover__image" style="<?php echo ($tocItemBg ? $tocItemBg : ''); ?>">
                     <div class="cover__overlay"></div>
-                    <header>
-                        <h1 class="toc__title check"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
-                        <!-- <p class="toc__description"><?php //the_excerpt(); ?></p> -->
+                    <header class="toc-item__header">
+                        <h1 class="toc__title check h3"><a class="toc-link" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h1>
+                        <div class="entry-meta">
+                        <p class="byline author vcard">
+                        <?php _e( 'by', 'pr_straterr' ); ?>
+                        <?php 
+
+                            the_author(); 
+
+                        ?>
+                        </p>
+                    </div>
                         </a>
                     </header>
                 </article>
@@ -59,6 +53,6 @@ $javascript = $assets['toc-js'];
               <?php endif; endwhile; wp_reset_postdata(); endif; ?>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo $javascript; ?>"></script>
+        <script type="text/javascript" src="<?php echo $GLOBALS['toc-js']; ?>"></script>
     </body>
 </html>
