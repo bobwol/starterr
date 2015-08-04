@@ -4,7 +4,6 @@
            <?php 
 
                 $editionmeta = get_post_meta($edition->ID);
-
                 $project = get_the_terms( $edition->ID, 'pr_editorial_project' );
 
             ?>
