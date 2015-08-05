@@ -962,7 +962,7 @@ img.alignnone, img.aligncenter, img.alignright, img.alignleft {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\0000376}}
   .aligncenter,
   img.aligncenter {
-    width: 61.8%;
+    width: 65.6666667%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -975,46 +975,22 @@ img.alignnone, img.aligncenter, img.alignright, img.alignleft {
     float: right;
     margin-left: 1.6em;
     margin-right: 0;
-    width: 38.2%;
-  }
-}
-@media (min-width: 61.25em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\0000396}}
-  .alignright.wrap,
-  img.alignright.wrap {
     width: 31.3333333%;
-    padding-right: 3%;
-    margin-right: 14.1666667%;
   }
 }
 
 @media (min-width: 37.5em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\0000398}}
   .alignleft,
   img.alignleft {
     float: left;
     margin-right: 1.6em;
-    width: 38.2%;
-  }
-}
-@media (min-width: 61.25em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\00003105}}
-  .alignleft,
-  img.alignleft {
-    width: 39.9166667%;
-  }
-}
-@media (min-width: 61.25em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\00003116}}
-  .alignleft.wrap,
-  img.alignleft.wrap {
+    margin-left: 0;
     width: 31.3333333%;
-    padding-left: 3%;
-    margin-left: 14.1666667%;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nico\/vagrant-local\/www\/pressroom-on\/htdocs\/public\/content\/uploads\/pressroom\/themes\/starterr\/assets\/sass\/base\/_images\.scss}line{font-family:\00003108}}
 .alignnone figcaption {
   margin-left: 1em;
 }

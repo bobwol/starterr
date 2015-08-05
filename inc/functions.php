@@ -18,7 +18,15 @@ function remove_empty_p($content) {
     return preg_replace('#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content);
 }
 
+/* ==========================================================================
+   Stop wrapping <img> in <p> tags
+   ========================================================================== */
 
+function filter_p_on_images($content){
+  return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+add_filter('the_content', 'filter_p_on_images');
 /* ==========================================================================
    IMAGE WITH CAPTION CLEAN UP
    ========================================================================== */

@@ -76,7 +76,7 @@ img.alignnone {
 .aligncenter,
 img.aligncenter {
 	@include mq($from: desktop) {
-        width: 61.8%;
+        width: column-width(8/12);
         // width: column-width(8/12);
         margin-left: auto;
         margin-right: auto;
@@ -90,16 +90,9 @@ img.alignright {
 		float: right;
 		margin-left: emRhythm(8);
 		margin-right: 0;
-		width: 38.2%;
+		width: column-width(4/12);
 	}
-	
-	&.wrap{
-		@include mq($from: desktop) {
-			width: column-width(4/12);
-			padding-right: column-gutter(2);
-			margin-right: column-width(2/12);
-		}
-	}
+
 }
 
 .alignleft,
@@ -107,18 +100,8 @@ img.alignleft {
 	@include mq($from: phablet) {
 		float: left;
 		margin-right: emRhythm(8);
-		width: 38.2%;
-	}
-	@include mq($from: desktop) {
-		width: column-width(5/12);
-	}
-	
-	&.wrap{
-		@include mq($from: desktop) {
-			width: column-width(4/12);
-			padding-left: column-gutter(2);
-			margin-left: column-width(2/12);
-		}
+		margin-left: 0;
+		width: column-width(4/12);
 	}
 }
 
