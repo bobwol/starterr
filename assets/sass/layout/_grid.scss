@@ -42,7 +42,8 @@
 blockquote,
 .aligned,
 .entry-content p.column,
-.entry-content-asset {
+.entry-content-asset,
+.entry-content table {
 	@include mq($from: desktop) {
         width: 100%;
         // width: column-width(12/12);
@@ -64,7 +65,7 @@ dl,
 small,
 aside,
 pre,
-.content-info__container {
+.content-info .container {
     @include mq($from: tablet) {
         // width: 61.8%;
         width: 91%;

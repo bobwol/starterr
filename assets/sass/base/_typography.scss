@@ -53,11 +53,11 @@ html {
     margin: emRhythm(32) 0;
 }
 
-.hentry-header--cover {
+.hentry-cover {
     margin: emRhythm(4) 0;
 }
 
-.hentry-header--cover + .entry-content {
+.hentry-cover + .entry-content {
         margin-top: emRhythm(10);
     }
 
@@ -191,8 +191,11 @@ p {
 
 p,
 img,
-.entry-content-asset {
+.entry-content-asset,
+.gallery,
+pre {
     margin-bottom: emRhythm(6);
+    margin-top: 0;
 }
 
 figure > img {
@@ -339,7 +342,33 @@ hr {
     }
 }
 
-.content-info__container {
+.entry-content table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+    thead {
+        background-color: #e0e0e0;
+        color: #000;
+        text-align: left;
+        vertical-align: bottom;
+    }
+    td, th {
+        border-left: 1px solid #cbcbcb;
+        border-bottom: 1px solid #cbcbcb;
+        border-width: 0 0 1px 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible;
+        padding: .5em 1em;
+    }
+    th {
+        text-align: left;
+        background-color: #e6e6e6;
+    }
+}
+
+.content-info .container {
     @extend %small;
     margin-bottom: emRhythm(8);
 }

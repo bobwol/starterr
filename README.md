@@ -1,5 +1,3 @@
-![](Starterr-logo.png)
-
 > a simple neat theme structured as a boilerplate for [PressRoom](http://press-room.io)    
 
 **Starterr** is built with the support of [Node](http://nodejs.org/), [Bower](http://bower.io/) and [Grunt](http://gruntjs.com/). 
@@ -33,61 +31,77 @@ Here we decided to place all of our layout files inside a `layout/` folder. We a
 ├── README.md
 ├── Starterr-logo.png
 ├── assets
+│   ├── bower_components
 │   ├── css
-│   │   ├── styles.a38a4712.css
-│   │   └── toc.7a77eb84.css
+│   │   ├── styles.css
+│   │   └── toc.css
 │   ├── fonts
 │   ├── img
-│   │   └── fallback.gif
+│   │   ├── fallback.gif
+│   │   └── logo.svg
 │   ├── js
-│   │   ├── scripts.min.665cf2e5.js
+│   │   ├── scripts.js
+│   │   ├── scripts.min.js
 │   │   ├── source
 │   │   │   ├── _main__init.js
 │   │   │   └── _toc__init.js
-│   │   └── toc.min.5b460967.js
+│   │   ├── toc.js
+│   │   ├── toc.min.js
+│   │   └── vendor
+│   │       └── modernizr-custom.js
+│   ├── pr-manifest.json
 │   └── sass
 │       ├── base
+│       │   ├── _bk-typography.scss
 │       │   ├── _breakpoints.scss
 │       │   ├── _colors.scss
 │       │   ├── _embed.scss
 │       │   ├── _fonts.scss
 │       │   ├── _globals.scss
 │       │   ├── _images.scss
+│       │   ├── _logo.scss
 │       │   └── _typography.scss
 │       ├── components
 │       │   ├── _callout.scss
 │       │   ├── _cover-image.scss
 │       │   ├── _entry-meta.scss
+│       │   ├── _gallery.scss
 │       │   └── _swiper.scss
 │       ├── layout
+│       │   ├── _footer.scss
 │       │   └── _grid.scss
 │       ├── pages
 │       │   ├── _all.scss
+│       │   ├── _cover.scss
 │       │   └── _toc.scss
 │       ├── styles.scss
+│       ├── themes
 │       ├── toc.scss
 │       └── utility
 ├── bower.json
 ├── config.xml
 ├── inc
-│   └── functions.php
+│   ├── functions.php
+│   └── pr_scripts.php
 ├── layouts
 │   ├── basic-article.php
 │   ├── components
-│   │   └── coverimage.php
-│   ├── index.php
+│   │   ├── coverimage.php
+│   │   └── fontobserver.php
+│   ├── cover.php
 │   ├── partials
 │   │   ├── content.php
-│   │   └── head.php
+│   │   ├── cover
+│   │   │   ├── content.php
+│   │   │   └── footer.php
+│   │   ├── footer.php
+│   │   ├── head.php
+│   │   └── header.php
 │   └── toc.php
 ├── package.json
+├── screenshot.png
 └── version.json
 ```
-
-##Assets versioning
-
-If you are developing your theme to feed a Baker Framework iOS App you would like to hard version your css and js files. To this end we adopted a slightly modified script taken from the Roots Framework. 
-The 
 
 
 ##Credits
@@ -103,15 +117,11 @@ Sass utilities for the frontend laborer
 The most advanced, yet intuitive, grid system available for Sass or Stylus 
 - [Mq](https://github.com/guardian/sass-mq) *by the guys at* [The Guardian](http://www.theguardian.com/uk)     
 A Sass mixin that helps manipulating media queries in an elegant way 
-- [Knife](http://pushplaybang.github.io/knife/) by [Paul van Zyl](http://nonacreative.com/)   
-Nail vertical rhythm, modular scale, and REMs like a boss with this simple set of SASS/SCSS variables, functions and mixins. 
 
 
 ###Javascript
 All the libs here are standalone pure javascript libraries, for maximum performance on mobile and full support for desktop browsers.
 
-- [textFit](https://github.com/STRML/textFit) *by* Samuel Reed    
-A jQuery-free component that quickly fits single and multi-line text to the width (and optionally height) of its container. 
 - [FluidVids](https://github.com/toddmotto/fluidvids) *by* [Todd Motto](http://toddmotto.com/)   
 A lightweight, easy-to-use jQuery plugin for fluid width video embeds. 
 - [iDangerous Swiper ](http://www.idangero.us/sliders/swiper/) *by* [iDangero.us](http://www.idangero.us/)  

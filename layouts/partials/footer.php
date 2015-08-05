@@ -1,6 +1,6 @@
-<footer role="contentinfo">
+<footer class="content-info" role="contentinfo">
     <div class="wrapper">
-        <div class="content-info__container">
+        <div class="container">
            <?php 
 
                 $editionmeta = get_post_meta($edition->ID);

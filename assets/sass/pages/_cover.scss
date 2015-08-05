@@ -51,5 +51,15 @@ html,
         display: table-row;
         height: 1px;
     }
+}
 
+.cover--photo {
+    color: white;
+    #logo path {
+        fill: white;
+    }
+    .cover-wrapper {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }

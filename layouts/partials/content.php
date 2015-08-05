@@ -4,10 +4,10 @@
 <div class="container" role="main"> 
 	<article class="hentry">
 		<?php if($image): ?>
-		<header class="hentry-header hentry-header--cover">
-			<div class="cover__image" style="background-image: url('<?php echo $image[0]; ?>');">
-				<div class="cover__overlay"></div>
-				<div class="cover__content">
+		<header class="hentry-header hentry-cover">
+			<div class="hc-image" style="background-image: url('<?php echo $image[0]; ?>');">
+				<div class="hc-overlay"></div>
+				<div class="hc-content">
 					<div class="wrapper--header">
 		<?php else: ?>
 			<header class="hentry-header hentry-header--naked">

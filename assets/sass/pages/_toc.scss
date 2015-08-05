@@ -1,7 +1,10 @@
+html {
+	height: 100%;
+}
+
 #toc {
 	margin: 0;
 	padding: 0;
-	background: red;
 	height: 100%;
 	width: 100%;
 	h1 {
@@ -19,7 +22,7 @@
 	overflow: hidden;
 }
 
-.toc__item {
+.hentry--toc {
 	background-color: #ddd; 
 	position: relative;
 	// font-size: 16px;
@@ -29,7 +32,7 @@
 	}
 }
 
-.toc-item__header {
+.hentry--toc header {
 	@include scut-center-transform;
 	width: 100%;
     text-align: center;
@@ -41,21 +44,23 @@
 
 #toc .swiper-slide-active {
 	border-style: solid;
-	border-color: #ccc;
+	border-color: $dark-grey;
 	border-width: 0px 1px 0 0px;
 }
 
 #toc .swiper-slide-active + .swiper-slide-visible {
 	border-style: solid;
-	border-color: #ccc;
-	border-width: 0px 1px 0 0px;
+	border-color: $dark-grey;
+	// turned off for two elements based swiper
+	// border-width: 0px 1px 0 0px;
+	border-width: 0px;
 }
 
-.toc__item.cover__image {
+.hentry--toc.hc-image {
 	min-height: 100vh;
 }
 
-.toc__title {
+.entry-title--toc {
 	margin: 0;
 	
 	@include mq($until: mobile) {

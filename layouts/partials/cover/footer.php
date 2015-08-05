@@ -1,6 +1,6 @@
 <footer class="content-info" role="contentinfo">
     <div class="wrapper">
-        <div class="content-info__container">
+        <div class="container">
            <?php 
 
                 $project = get_the_terms( $edition->ID, 'pr_editorial_project' );

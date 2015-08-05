@@ -4,7 +4,7 @@
 ?>
 <html class="no-js fonts-loaded" <?php language_attributes(); ?>>
 <?php else: ?>
-<html class="no-js banana" <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?>>
 <?php endif; ?>
 	<head>
 		<meta charset="utf-8">

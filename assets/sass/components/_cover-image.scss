@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ENTRY META
+   ARTICLE IMAGE COVER
    ========================================================================== */
 
 .cover + .entry-content {
@@ -12,7 +12,7 @@
 	overflow:hidden;
 }
 
-.cover__image {
+.hc-image {
 	background-repeat: no-repeat;
 	background-size: cover;
 	// background-attachment: fixed;
@@ -26,12 +26,12 @@ h1.entry-title--resize {
 	// padding: 0 2rem;
 }
 
-.cover__content {
+.hc-content {
 	@include scut-center-transform;
 	width: 100%;
 }
 
-.toc__title,
+.entry-title--toc,
 .entry-title--cover {
 	// transition: all 1s ease-in-out;
 	margin-top: 0;
@@ -58,13 +58,13 @@ h1.entry-title--resize {
 	bottom: 0;
 }
 
-.cover__overlay {
+.hc-overlay {
 	@extend %fullScreen;
 	background-color: rgba(0, 0, 0, 0.5);
 	background-size:5px;
 }
 
-.cover__overlay--scanline {
+.hc-overlay--scanline {
 	transition: all 1s ease-in-out;
 	&.background--light {
 		@extend %light-svgLine;
@@ -83,7 +83,7 @@ h1.entry-title--resize {
 	}
 }
 
-.cover__overlay--simple {
+.hc-overlay--simple {
 	transition: all 1s ease-in-out;
 	@extend %fullScreen;
 	&.background--light {

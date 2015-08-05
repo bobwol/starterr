@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     var jsContent = [
-        'assets/bower_components/modernizer/modernizr.js',
+        'assets/js/vendor/modernizr-custom.js',
         'assets/bower_components/fluidvids/src/fluidvids.js',
         'assets/bower_components/fastclick/lib/fastclick.js',
         'assets/js/source/_main__init.js'
@@ -174,14 +174,14 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', [
-    'clean',
-    'sass:dist',
-    'uglify:dist',
-    'version',
+        'clean',
+        'sass:dist',
+        'uglify:dist',
+        'version',
     ]);
 
     grunt.registerTask('dev', [
-    'watch'
+        'watch'
     ]);
 
     grunt.registerTask('stage', ['rsync:stage']);
