@@ -1,19 +1,19 @@
 {
   "dest": "assets/pr-manifest.json",
   "assets/css/styles.min.css": {
-    "path": "assets/css/styles.a38a4712b6cfad8e.min.css",
-    "hash": "a38a4712b6cfad8e"
+    "path": "assets/css/styles.bd6baac1631c6e5d.min.css",
+    "hash": "bd6baac1631c6e5d"
   },
   "assets/css/toc.min.css": {
-    "path": "assets/css/toc.7a77eb8497830437.min.css",
-    "hash": "7a77eb8497830437"
+    "path": "assets/css/toc.8811bbc30ae72bde.min.css",
+    "hash": "8811bbc30ae72bde"
   },
   "assets/js/scripts.min.js": {
-    "path": "assets/js/scripts.54b6a9094a6a0c38.min.js",
-    "hash": "54b6a9094a6a0c38"
+    "path": "assets/js/scripts.b12ca5c4a7d9d880.min.js",
+    "hash": "b12ca5c4a7d9d880"
   },
   "assets/js/toc.min.js": {
-    "path": "assets/js/toc.1f2fb20facfc7509.min.js",
-    "hash": "1f2fb20facfc7509"
+    "path": "assets/js/toc.1f6c4843c72aed7c.min.js",
+    "hash": "1f6c4843c72aed7c"
   }
 }
