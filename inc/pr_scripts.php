@@ -1,8 +1,11 @@
 <?php
 
-if (!defined('PR_ENV')) {
-  define('PR_ENV', 'production');  // 'production' || 'development'
-}
+// if (!defined('PR_ENV')) {
+//     // 'production' || 'development'
+//     define('PR_ENV', 'production');  
+// }
+
+define('PR_ENV', '');
 
 if (PR_ENV === 'development') {
 

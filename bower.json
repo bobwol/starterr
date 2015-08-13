@@ -14,7 +14,8 @@
     "typesettings": "~2.4.0",
     "modular-scale": "~2.1.1",
     "normalize.scss": "~3.0.2",
-    "masonry": "~3.3.1"
+    "masonry": "~3.3.1",
+    "swiper": "https://github.com/nolimits4web/Swiper.git#Swiper2"
   },
   "resolutions": {
     "sass-mq": "~3.2.2",
