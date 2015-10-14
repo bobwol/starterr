@@ -30,7 +30,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-html { 
+html {
     font-size: 106.25%; // 17px
 	@include mq($from: mobile) {
         font-size: 112.5%; // 18px
@@ -46,7 +46,7 @@ html {
 	// }
 	@include mq($from: wide) {
         font-size: 131.25%; // 21px
-	}	 
+	}
 }
 
 .hentry-header--naked {
@@ -74,7 +74,7 @@ html {
 
 
 h1,
-.h1 { 
+.h1 {
 	@include setType(14, ms(5));
     @include mq($from: mobile) {
         @include setType(16, ms(6));
@@ -91,7 +91,7 @@ h1,
 }
 
 h1.entry-title--emphasis,
-h1.edition-title--emphasis { 
+h1.edition-title--emphasis {
     @include setType(16, ms(7));
     @include mq($from: mobile) {
         @include setType(16, ms(8));
@@ -105,7 +105,7 @@ h1.edition-title--emphasis {
 }
 
 h2,
-.h2 { 
+.h2 {
 	@include setType(12, ms(3));
     @include mq($from: desktop) {
         @include setType(17, ms(7));
@@ -113,7 +113,7 @@ h2,
 }
 
 h3,
-.h3 { 
+.h3 {
 	@include setType(11, ms(2));
     @include mq($from: desktop) {
         @include setType(14, ms(5));
@@ -140,7 +140,7 @@ h5 {
     text-transform: uppercase;
 }
 
-h6 { 
+h6 {
 
 	font-weight: normal;
     font-style: italic!important;
@@ -174,7 +174,7 @@ p {
     }
 
     &.intro {
-       @include setType(11, 1.2em); 
+       @include setType(11, 1.2em);
     }
 
     &.column {
@@ -225,7 +225,7 @@ blockquote {
 }
 
 blockquote > p {
-	font-style:   italic; 
+	font-style:   italic;
 }
 
 
@@ -287,9 +287,9 @@ abbr {
     font-weight: bold;
 }
 
-small, 
+small,
 aside,
-figcaption { 
+figcaption {
 
 	display: block
 }

@@ -16,7 +16,9 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	// background-attachment: fixed;
-	min-height: 82vh;
+	// min-height: 82vh;
+	height: 0;
+	padding-bottom: 56.25%;
 	position: relative;
 	overflow: hidden;
 }
