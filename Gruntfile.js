@@ -125,7 +125,7 @@ module.exports = function(grunt) {
             assets: {
                 options: {
                     length: 16,
-                    format: false, 
+                    format: false,
                     rename: true,
                     manifest: 'assets/pr-manifest.json',
                     summaryOnly: true,
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['clean','uglify:dev', 'sass:dev']
             }
-            
+
         },
 
         clean: {

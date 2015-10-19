@@ -18,9 +18,15 @@
 	// background-attachment: fixed;
 	// min-height: 82vh;
 	height: 0;
-	padding-bottom: 56.25%;
+	padding-bottom: 100%;
 	position: relative;
 	overflow: hidden;
+	@include mq($from: phablet) {
+		padding-bottom: 75%;
+	}
+	@include mq($from: desktop) {
+		padding-bottom: 56.25%;
+	}
 }
 
 h1.entry-title--resize {
