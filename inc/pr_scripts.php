@@ -2,10 +2,10 @@
 
 // if (!defined('PR_ENV')) {
 //     // 'production' || 'development'
-//     define('PR_ENV', 'production');  
+//     define('PR_ENV', 'production');
 // }
 
-define('PR_ENV', '');
+define('PR_ENV', 'development');
 
 if (PR_ENV === 'development') {
 

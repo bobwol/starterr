@@ -1,0 +1,19 @@
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+
+.nav {
+    @include setType(4, ms(-2));
+    // margin-top: emRhythm(4);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.pr-menu {
+    @include scut-list-inline(1em, true);
+    // border-bottom: $bd;
+    border-top: 5px solid $textColor;
+    border-bottom: 1px solid $textColor;
+    padding-bottom: emRhythm(4);
+    padding-top: emRhythm(4);
+}

@@ -59,9 +59,10 @@ blockquote,
 .entry-content h5,
 .entry-content h6,
 .entry-content p,
-ul,
-ol,
-dl,
+.entry-content ul,
+.entry-content ol,
+.entry-content dl,
+.pr-menu--blog,
 small,
 aside,
 pre,
@@ -86,7 +87,7 @@ ol > ul {
 }
 
 p > small {
-   width: auto; 
+   width: auto;
 }
 
 .alignnone {

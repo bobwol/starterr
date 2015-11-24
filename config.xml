@@ -19,6 +19,12 @@
             <path>layouts/basic-article.php</path>
         </item>
         <item>
+            <name>blog layout</name>
+            <rule>content</rule>
+            <description>blog article layout</description>
+            <path>layouts/basic-article--blog.php</path>
+        </item>
+        <item>
             <name>cover</name>
             <rule>content</rule>
             <description>Cover layout</description>
