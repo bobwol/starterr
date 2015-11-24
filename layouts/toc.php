@@ -19,7 +19,7 @@
                         $edition_posts->the_post();
                         $post_type = get_post_type( get_the_ID() );
 
-                        if( $post_type != "pr_ad_bundle") :
+                        if( $post_type != "pr_ad_bundle" && $post_type !="pr_custom_html") :
                             $image_id =  get_post_thumbnail_id();
                             if($image_id):
                                 $attached_image = wp_get_attachment_metadata($image_id);
@@ -35,16 +35,16 @@
                         <div class="hc-overlay"></div>
                         <header>
                             <a class="toc-link" href="<?php echo get_permalink(); ?>">
-                            <?php 
+                            <?php
 
-                                $title  = get_the_title(); 
+                                $title  = get_the_title();
                                 $titleClass = '';
 
                                 $title_words = strlen($title);
                                 if ( $title_words <= 24 ) {
                                     $titleClass .= ' h2';
                                 } else {
-                                   $titleClass .= ' h3'; 
+                                   $titleClass .= ' h3';
                                 }
 
                             ?>
@@ -59,9 +59,9 @@
                                 <div class="entry-meta">
                                     <p class="byline author vcard">
                                     <?php _e( 'by', 'pr_straterr' ); ?>
-                                    <?php 
+                                    <?php
 
-                                        the_author(); 
+                                        the_author();
 
                                     ?>
                                     </p>
@@ -70,11 +70,11 @@
                         </header>
                     </article>
                 </div>
-              <?php 
+              <?php
 
-                        endif; 
-                    endwhile; 
-                    wp_reset_postdata(); 
+                        endif;
+                    endwhile;
+                    wp_reset_postdata();
                 endif;
 
             ?>
